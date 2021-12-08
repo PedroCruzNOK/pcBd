@@ -13,7 +13,7 @@ services:
         MYSQL_DATABASE: "controlvacacional"
         MYSQL_USER: "pedro"
         MYSQL_PASSWORD: "simons83"
-      volumenes:
+      volumes:
         - ./schemas:/var/lib/mysql:rw
       networks:
         mysql_network:
