@@ -22,7 +22,7 @@ services:
 volumes: 
   schemas: {}
 networks:
-  name: mysql_net
+  name: mysql_network
   driver: bridge
         
      
