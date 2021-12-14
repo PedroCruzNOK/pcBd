@@ -17,6 +17,15 @@ services:
       labels: [MySQLDB]
       restart_policy:
         condition: on-failure
+  backend:
+    image: backend
+    ports:
+      - "3001:3000"
+    deploy:
+      mode: replicated
+      replicas: 2
+      restart_policy:
+        condition: on-failure
   visualizer:
     image: dockersamples/visualizer:stable
     ports:
