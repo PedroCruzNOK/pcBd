@@ -40,6 +40,8 @@ services:
     ports:
       - "5001:5000"
     deploy:
+      placement:
+        constraints: [node.role == manager]
       mode: replicated
       replicas: 3
       restart_policy:
