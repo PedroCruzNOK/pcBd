@@ -22,8 +22,21 @@ services:
     ports:
       - "3001:3000"
     deploy:
+      placement:
+        constraints: [node.role == worker]
       mode: replicated
-      replicas: 2
+      replicas: 4
+      restart_policy:
+        condition: on-failure
+  frontend:
+    image: frontend
+    ports:
+      - "5001:5000"
+    deploy:
+      placement:
+        constraints: [node.role == worker]
+      mode: replicated
+      replicas: 5
       restart_policy:
         condition: on-failure
   visualizer:
