@@ -26,8 +26,8 @@ services:
       replicas: 3
       restart_policy:
         condition: on-failure
-  apolo:
-    image: apolo
+  apollo:
+    image: apollo
     ports:
       - "4001:4000"
     deploy:
