@@ -8,6 +8,11 @@ services:
       restart: always
       ports: 
         - 23306:3306
+      deploy:
+        mode: replicated
+        replicas: 3
+        restart_policy:
+          condition: on-failure
       environment:
         MYSQL_ROOT_PASSWORD: "simons83"
         MYSQL_DATABASE: "controlvacacional"
